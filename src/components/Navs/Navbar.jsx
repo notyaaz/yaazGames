@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../../styles.js";
 import { Outlet, Link } from "react-router-dom";
+import logo from "../../../public/images/Logo.png"
 
 export default function Navbar() {
   return (
@@ -10,7 +11,7 @@ export default function Navbar() {
           className={`${styles.sectionPadding} flex justify-between items-center`}
         >
           <Link to={"/"}>
-            <img src="images/Logo.png" alt="logo" />
+            <img src={logo} alt="logo" />
           </Link>
           <div className="flex justify-center items-center gap-[10px] lg:gap-[30px] font-bold text-[1.25rem]">
             <Link className="text-accent hover:text-accentHover" to={"/"}>

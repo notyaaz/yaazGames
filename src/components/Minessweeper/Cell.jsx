@@ -61,8 +61,8 @@ export default function Cell(props) {
   }
 
   function handleRightClick(event) {
-    if (isSolved) return;
     event.preventDefault();
+    if (isSolved) return;
     setGrid((prev) => {
       const newAr = [...prev];
       newAr[yPos][xPos].isFlaged = !prev[yPos][xPos].isFlaged;
@@ -82,7 +82,7 @@ export default function Cell(props) {
       onClick={(event) => handleLeftClick(event, xPos, yPos)}
       onContextMenu={(event) => handleRightClick(event)}
       className={` w-[30px] h-[30px] text-black font-bold 
-      ${isSolved ? (isDark ? "bg-accent pointer-events-none" : "bg-accentHover pointer-events-none") : (isDark ? "bg-complenetary hover:bg-m_resetButton" : "bg-complenetaryHover hover:bg-m_resetButton")} `}
+      ${isSolved ? (isDark ? "bg-accent cursor-default" : "bg-accentHover cursor-default") : (isDark ? "bg-complenetary hover:bg-m_resetButton" : "bg-complenetaryHover hover:bg-m_resetButton")} `}
     >
       {isFlaged ? "🚩" : ""}
       {isSolved ? content : ""}
