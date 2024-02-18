@@ -3,7 +3,7 @@ import NumberComponent from "./NumberComponent.jsx";
 
 export default function TenziesContainer(props) {
   return (
-    <div className="bg-gray-200 w-[400px] min-h-[400px]  rounded-md font-Inter px-[40px] py-[30px]">
+    <div className="bg-gray-200 w-[400px] min-h-[400px] rounded-md px-[40px] py-[30px] shadow">
       <div className="flex flex-col justify-center items-center">
         <h2 className="text-gray-900 font-bold text-[2rem]">Tenzies</h2>
         <p className="text-gray-700 text-[1rem] text-center">
@@ -25,7 +25,7 @@ export default function TenziesContainer(props) {
         </div>
         <button
           onClick={props.won ? props.playAgain : props.roll}
-          className=" bg-purple text-white rounded-lg py-[5px] w-[100px] outline-none hover:bg-indigo-800"
+          className=" bg-complenetary text-white rounded-lg py-[5px] w-[100px] outline-none hover:bg-complenetaryHover"
         >
           {props.won ? "play again" : "Roll"}
         </button>

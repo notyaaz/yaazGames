@@ -5,6 +5,7 @@ function randomNumber() {
 }
 
 export default function Tenzies() {
+  console.log(55 % 4);
   const [ar, setAr] = useState(
     [
       { id: 0, number: 1, isClicked: false },
@@ -36,7 +37,7 @@ export default function Tenzies() {
   }
 
   function handleClick(id) {
-    if(won==true)return
+    if (won == true) return;
     setAr((prev) => {
       const newAr = prev.map((tenz) => {
         if (tenz.id === id) {
@@ -77,11 +78,11 @@ export default function Tenzies() {
         { id: 9, number: 9, isClicked: false },
       ].map((tenz) => ({ ...tenz, number: randomNumber() }))
     );
-    setWon(false)
+    setWon(false);
   }
 
   return (
-    <div className="bg-darkGreen h-svh flex items-center justify-center">
+    <div className="h-svh flex items-center justify-center">
       <TenziesContainer
         mainNumber={mainNumber}
         ar={ar}
