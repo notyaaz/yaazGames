@@ -81,8 +81,8 @@ export default function Cell(props) {
     <div
       onClick={(event) => handleLeftClick(event, xPos, yPos)}
       onContextMenu={(event) => handleRightClick(event)}
-      className={`w-[30px] h-[30px] text-black font-bold 
-      ${isSolved ? (isDark ? "bg-accent" : "bg-accentHover") : (isDark ? "bg-complenetary" : "bg-complenetaryHover")}`}
+      className={` w-[30px] h-[30px] text-black font-bold 
+      ${isSolved ? (isDark ? "bg-accent pointer-events-none" : "bg-accentHover pointer-events-none") : (isDark ? "bg-complenetary hover:bg-m_resetButton" : "bg-complenetaryHover hover:bg-m_resetButton")} `}
     >
       {isFlaged ? "🚩" : ""}
       {isSolved ? content : ""}
