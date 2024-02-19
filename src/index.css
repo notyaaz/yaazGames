@@ -12,5 +12,12 @@
 body {
   font-family: "Inter";
 }
-.shadow{
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;}
+.shadow {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.blurring {
+  backdrop-filter: blur(8px); /* blur effect to the backdrop */
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+}

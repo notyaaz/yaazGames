@@ -1,3 +1,11 @@
+import Swal from "sweetalert2";
+
+export function randomNumber() {
+  return Math.ceil(Math.random() * 9);
+}
+
+
+
 export function shuffle2DArray(array) {
   for (let i = array.length - 1; i >= 0; i--) {
     for (let j = array[i].length - 1; j >= 0; j--) {
@@ -9,3 +17,21 @@ export function shuffle2DArray(array) {
   return array;
 }
 
+export async function winAlertAndInputUsername() {
+  const { value: username } = await Swal.fire({
+    icon: "success",
+    title: "You won, Congrats",
+    input: "text",
+    inputLabel: "Enter your username",
+    showCancelButton: true,
+    inputValidator: (value) => {
+      if (!value) {
+        return "You need to write something!";
+      }
+    },
+  });
+  if (username) {
+    Swal.fire(`SENT`);
+  }
+  return username
+}

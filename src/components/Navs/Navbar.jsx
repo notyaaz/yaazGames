@@ -6,7 +6,7 @@ import logo from "../../../public/images/Logo.png"
 export default function Navbar() {
   return (
     <>
-      <div className="fixed w-full">
+      <div className="w-full mb-[50px]">
         <nav
           className={`${styles.sectionPadding} flex justify-between items-center`}
         >

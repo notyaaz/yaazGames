@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import MinessweeperContainer from "./MinessweeperContainer.jsx";
-import { shuffle2DArray } from "../Helpers.js";
+import { shuffle2DArray, winAlertAndInputUsername } from "../Helpers.js";
 
 export default function Minessweeper() {
   const [grid, setGrid] = useState(() => {
     var arr = [];
-    let remainingBombs = 40;
+    let remainingBombs = 6;
 
     for (var i = 0; i < 14; i++) {
       var row = [];
@@ -41,7 +41,7 @@ export default function Minessweeper() {
 
   function win() {
     setWon(true);
-    console.log("u wonnn!!");
+    winAlertAndInputUsername()
   }
 
   function reset() {
@@ -93,7 +93,7 @@ export default function Minessweeper() {
 
   return (
     <div>
-      <div className="flex items-center justify-center bg-m_backgroundColor h-svh">
+      <div className="flex items-center justify-center bg-m_backgroundColor mt-[100px]">
         <MinessweeperContainer
           grid={grid}
           setGrid={setGrid}

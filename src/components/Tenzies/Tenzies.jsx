@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import TenziesContainer from "./TenziesContainer.jsx";
-function randomNumber() {
-  return Math.ceil(Math.random() * 9);
-}
+import Swal from "sweetalert2";
+import { randomNumber, winAlertAndInputUsername } from "../Helpers.js";
 
 export default function Tenzies() {
-  console.log(55 % 4);
   const [ar, setAr] = useState(
     [
       { id: 0, number: 1, isClicked: false },
@@ -36,7 +34,7 @@ export default function Tenzies() {
     });
   }
 
-  function handleClick(id) {
+  async function handleClick(id) {
     if (won == true) return;
     setAr((prev) => {
       const newAr = prev.map((tenz) => {
@@ -48,20 +46,22 @@ export default function Tenzies() {
       });
       return newAr;
     });
+  }
 
+  useEffect(() => {
     const x = ar[0].number;
     let flag = false;
     for (let i = 0; i < ar.length; i++) {
-      if (ar[i].number != x) {
+      if (ar[i].number != x || ar[i].isClicked != true) {
         flag = true;
         break;
       }
     }
     if (flag == false) {
-      console.log("U WOOOOOOOOOOOOOOOOOOOOOOOOOOOON!!");
       setWon(true);
+      winAlertAndInputUsername();
     }
-  }
+  }, [ar]);
 
   function playAgain() {
     setAr(
@@ -82,7 +82,7 @@ export default function Tenzies() {
   }
 
   return (
-    <div className="h-svh flex items-center justify-center">
+    <div className="mt-[100px] flex items-center justify-center">
       <TenziesContainer
         mainNumber={mainNumber}
         ar={ar}

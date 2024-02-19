@@ -4,7 +4,7 @@ import styles from "../../styles.js";
 export default function Home() {
   return (
     <div
-      className={`${styles.sectionPadding} h-svh flex justify-center items-center flex-col`}
+      className={`${styles.sectionPadding} flex justify-center items-center flex-col mt-[100px]`}
     >
       <p className="text-[5rem] font-bold w-full">Welcome,</p>
       <p className="text-[1.6rem] w-full">
