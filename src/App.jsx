@@ -5,7 +5,8 @@ import Navbar from "./components/Navs/Navbar.jsx";
 import Home from "./components/Navs/Home.jsx";
 import Offline from "./components/Navs/Offline.jsx";
 import Online from "./components/Navs/Online.jsx";
-
+import Leaderboard from "./components/Navs/Leaderboard.jsx";
+import Signing from "./components/Navs/Signing.jsx";
 import { Routes, Route } from "react-router-dom";
 import GamePicker from "./components/GamePicker.jsx";
 
@@ -16,7 +17,9 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/offline" element={<Offline />} />
         <Route path="/online" element={<Online />} />
+        <Route path="/leaderboard" element={<Leaderboard />} />
         <Route path="/offline/:gameName" element={<GamePicker />} />
+        <Route path="/signing" element={<Signing/>}/>
       </Route>
     </Routes>
   );

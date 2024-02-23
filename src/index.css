@@ -17,7 +17,7 @@ body {
 }
 
 .blurring {
-  backdrop-filter: blur(8px); /* blur effect to the backdrop */
+  backdrop-filter: blur(5px); /* blur effect to the backdrop */
   background-color: rgba(0, 0, 0, 0.6);
   opacity: 1;
 }
