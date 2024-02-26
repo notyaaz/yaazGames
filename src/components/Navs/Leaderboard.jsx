@@ -16,7 +16,7 @@ export default function Leaderboard() {
 
     return (
         <div
-            className={`${styles.sectionPadding} flex justify-center items-center flex-col mt-[100px]`}
+            className={`${styles.sectionPadding} flex justify-center items-center flex-col mt-[100px] `}
         >
             <table className={`max-w-[1200px] w-full `}>
                 <thead className="text-left bg-accent text-[1.2rem]">
@@ -25,6 +25,7 @@ export default function Leaderboard() {
                         <th className="p-[12px]">Email:</th>
                         <th className="p-[12px]">Minessweeper:</th>
                         <th className="p-[12px]">Tenzies:</th>
+                        <th className="p-[12px]">Memorize:</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -46,6 +47,9 @@ export default function Leaderboard() {
                                     </td>
                                     <td className="p-[12px]">
                                         {user.tzTime > 0 ? user.tzTime + " seconds" : "Didn't play"}{" "}
+                                    </td>
+                                    <td className="p-[12px]">
+                                        {user.mzScore > 0 ? user.mzScore + " points" : "Didn't play"}{" "}
                                     </td>
                                 </tr>
                             );

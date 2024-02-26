@@ -46,3 +46,11 @@ export async function winAlert() {
     });
     return false;
 }
+
+export function delay(timeInMilliseconds) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(); // Resolve the promise after the specified time
+        }, timeInMilliseconds);
+    });
+}
